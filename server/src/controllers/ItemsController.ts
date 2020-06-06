@@ -1,5 +1,6 @@
 import { Request, Response } from 'express'
 import db from '../database/connection'
+import serializateImageUrl from '../utils/serializateImageUrl'
 
 class ItemsController {
   async index (request: Request, response: Response) {
@@ -9,7 +10,7 @@ class ItemsController {
       return {
         id: item.id,
         title: item.title,
-        image_url: `http://192.168.0.4:3333/uploads/${item.image}`
+        image_url: serializateImageUrl(item.image)
       }
     })
 
