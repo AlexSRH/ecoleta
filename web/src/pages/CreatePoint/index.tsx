@@ -110,7 +110,6 @@ const CreatPoint: React.FC = () => {
     } else {
       setSelectedItems([...selectedItems, id])
     }
-
   }
 
   async function handleSubmit (event: FormEvent) {
